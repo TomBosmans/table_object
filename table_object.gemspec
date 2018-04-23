@@ -8,10 +8,10 @@ Gem::Specification.new do |s|
   s.name        = "table_object"
   s.version     = TableObject::VERSION
   s.authors     = ["TomBosmans"]
-  s.email       = ["t.bosse@hotmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of TableObject."
-  s.description = "TODO: Description of TableObject."
+  s.email       = ["tom.94.bosmans@gmail.com"]
+  s.homepage    = "https://github.com/TomBosmans/table_object"
+  s.summary     = "Generate HTML tables with ruby"
+  s.description = "Generate HTML tables by creating ruby classes."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
