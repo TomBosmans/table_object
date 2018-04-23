@@ -13,3 +13,16 @@ gemspec
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
+group :development, :test do
+  # Testing framework
+  gem 'minitest-spec-rails'
+  # A library for setting up Ruby objects as test data
+  gem 'factory_bot_rails'
+  # Debugging tool
+  gem 'pry'
+end
+
+group :development do
+  # Annotate Rails classes with schema and routes info
+  gem 'annotate'
+end
