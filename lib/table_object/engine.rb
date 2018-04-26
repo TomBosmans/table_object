@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'table_object/column'
+require 'table_object/base'
 
 module TableObject
   class Engine < ::Rails::Engine
