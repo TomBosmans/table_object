@@ -1,0 +1,32 @@
+<header>
+  <% table.table_actions.each do |table_action| %>
+    <%= button_to table_action.label, table_action.path %>
+  <% end %>
+</header>
+
+<table id="<%= table.name %>">
+  <tr>
+    <% table.columns.each do |column| %>
+      <th class="<%= column.type %>"><%= column.label %></th>
+    <% end %>
+    <th>-</th>
+  </tr>
+
+  <% table.resources.each do |resource| %>
+    <tr id="resource-<%= resource.id %>">
+      <% table.columns.each do |column| %>
+	<td class="<%= column.type %>">
+	  <%= link_to column.path_for(resource) do %>
+	    <%= column.value_for(resource) %>
+	  <% end %>
+	</td>
+      <% end %>
+
+      <td>
+	<% table.resource_actions.each do |resource_action| %>
+	  <%= link_to resource_action.label, resource_action.path.call(resource) %>
+	<% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
