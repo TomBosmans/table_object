@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UserTable < TableObject::Base
   self.default_path = ->(user) { url_helper.user_path(user) }
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   def index
     create_some_users
@@ -25,7 +27,7 @@ class UsersController < ApplicationController
   end
 end
 
-FIRST_NAMES = %w(
+FIRST_NAMES = %w[
   Liliana
   Ethelene
   Jeana
@@ -40,9 +42,9 @@ FIRST_NAMES = %w(
   Brigitte
   Shawanda
   Charmain
-).freeze
+].freeze
 
-LAST_NAMES = %w(
+LAST_NAMES = %w[
   Fenstermaker
   Larin
   Vang
@@ -50,4 +52,4 @@ LAST_NAMES = %w(
   Grimaldi
   Hemmingway
   Harwood
-).freeze
+].freeze

@@ -20,4 +20,3 @@ describe TableObject::Action do
     end
   end
 end
-

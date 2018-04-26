@@ -5,10 +5,8 @@ require 'table_object/action'
 
 class TableObject::Base
   class << self
-    attr_accessor :columns,
-                  :table_actions, :resource_actions,
-                  :default_path,
-                  :model_class
+    attr_accessor :default_path
+    attr_writer :model_class
 
     # Creates a column and stores it in the columns attribute
     def column(name, options = {})

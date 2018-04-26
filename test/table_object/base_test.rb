@@ -12,7 +12,7 @@ describe TableObject::Base do
 
   describe '.column_names' do
     it 'returns sorted  array of all column names' do
-      column_names = %i(email name birth_date log_in_count)
+      column_names = %i[email name birth_date log_in_count]
       assert_equal column_names.sort_by(&:to_s), UserTable.column_names
     end
   end
@@ -31,7 +31,7 @@ describe TableObject::Base do
 
   describe '.table_action_names' do
     it 'returns sorted  array of all table action names' do
-      table_action_names = %i(new)
+      table_action_names = %i[new]
 
       assert_equal table_action_names.sort_by(&:to_s),
                    UserTable.table_action_names
@@ -52,7 +52,7 @@ describe TableObject::Base do
 
   describe '.resource_action_names' do
     it 'returns sorted  array of all resource action names' do
-      resource_action_names = %i(edit destroy)
+      resource_action_names = %i[edit destroy]
 
       assert_equal resource_action_names.sort_by(&:to_s),
                    UserTable.resource_action_names

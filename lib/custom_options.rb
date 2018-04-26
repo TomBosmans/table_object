@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module CustomOptions
   # All the things passed into the options hash, will be returned as if they
   # are attributes.
