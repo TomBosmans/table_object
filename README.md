@@ -1,10 +1,9 @@
 # TableObject
-First day at my first job: "We are going to change the look of our app, as new people you folk are going to start with changing all the tables". And oh boy, there where a lot of tables! And sure some inconsistencies slipped in...
+First day at my first job: "We are going to change the look of our app, you are going to start with changing all the tables to match the new style". And oh boy, there where a lot of tables! And sure some inconsistencies slipped in...
 
 ## Goal :shipit:
-* Keep logic out of the views, no one wants to go through a view with a 100 if statements.
-* Prevent having to go check other tables to see how to build them up.
-* Make tables easy to build and maintain.
+* Keep most logic out of the views, no one wants to go through a view with a 100 if statements.
+* Keep it DRY.
 
 ## Usage :hammer:
 
@@ -78,13 +77,13 @@ end
 ```
 #### Table
 * `.default_path`: if table has a default path this will be used for all columns, unless they have a path assigned.
-* `.model_class`: by default this will try to guess the model class based on the table name by removing the "Table" substring.
+* `.model_class`: by default this will try to guess the model class based on the table name by removing the "Table" substring. UserTable => User
 * `.default_path`: this path will be filled in all columns of the table by default. can be overridden by given your column a path.
 * `.column`: Will create a column object for the table.
 * `.table_action`: Will create action object for the table. This are actions that have to do with the table as a whole. New, Export, ...
 * `.resource_action`: Will create action object for the table. this are actions that have to do with the resource. Edit, Show, Destroy
 * The type on a column, if not given, is filled in by default based on db info. This uses `model_class`.
-* `#table_name`: by default this is the table class name in snakecase, but can be set.
+* `#name`: by default this is the table class name in snakecase, but can be set.
 * `#resources`: This is what you pass in the table. this can be collection of users, books, movies,...
 
 #### Column
@@ -112,8 +111,8 @@ end
 ```
 ## :warning: Warning :warning:
 If you access attributes from nested relationships you can create N+1 queries. Prevent these by using `include` or `eager_load`.
-For more about this you can read [this](http://blog.scoutapp.com/articles/2017/01/24/activerecord-includes-vs-joins-vs-preload-vs-eager_load-when-and-where)
-```
+For more info you can read [this](http://blog.scoutapp.com/articles/2017/01/24/activerecord-includes-vs-joins-vs-preload-vs-eager_load-when-and-where)
+```ruby
 def index
   users = User.includes(:address)
   @user_table = UserTable.new(users)
