@@ -16,9 +16,9 @@ class TableObject::Base
   def initialize(resources)
     self.resources = resources
 
-    self.columns = self.class.columns
-    self.table_actions = self.class.table_actions
-    self.resource_actions = self.class.resource_actions
+    self.columns = self.class.columns.collect { |c| c.dup }
+    self.table_actions = self.class.table_actions.collect { |a| a.dup  }
+    self.resource_actions = self.class.resource_actions.collect { |a| a.dup }
     self.default_path = self.class.default_path
   end
 
