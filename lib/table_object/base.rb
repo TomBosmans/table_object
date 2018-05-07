@@ -16,9 +16,9 @@ class TableObject::Base
   def initialize(resources)
     self.resources = resources
 
-    self.columns = self.class.columns.collect(&:deep_dup)
-    self.table_actions = self.class.table_actions.collect(&:deep_dup)
-    self.resource_actions = self.class.resource_actions.collect(&:deep_dup)
+    self.columns = deep_dup(self.class.columns)
+    self.table_actions = deep_dup(self.class.table_actions)
+    self.resource_actions = deep_dup(self.class.resource_actions)
     self.default_path = self.class.default_path
   end
 
@@ -45,5 +45,13 @@ class TableObject::Base
 
   def generate_table_name
     self.class.name.underscore
+  end
+
+  def deep_dup(objects)
+    objects.collect do |object|
+      new_object = object.dup
+      new_object.options = object.options.dup
+      new_object
+    end
   end
 end
