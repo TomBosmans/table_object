@@ -1,5 +1,4 @@
 # TableObject
-First day at my first job: "We are going to change the look of our app, you are going to start with changing all the tables to match the new style". And oh boy, there where a lot of tables! And sure some inconsistencies slipped in...
 
 ## Goal :shipit:
 * Keep most logic out of the views, no one wants to go through a view with a 100 if statements.
